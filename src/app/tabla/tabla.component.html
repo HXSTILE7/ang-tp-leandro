@@ -1,0 +1,66 @@
+<div class="container">
+  <h2>Agregar Cliente</h2>
+  <form (submit)="agregarCliente()" class="form">
+    <div class="form-group">
+      <input type="text" id="nombre" name="nombre" class="form-control" [(ngModel)]="nuevoCliente.nombre" placeholder="Nombre" required>
+    </div>
+    <div class="form-group">
+      <input type="text" id="apellido" name="apellido" class="form-control" [(ngModel)]="nuevoCliente.apellido" placeholder="Apellido" required>
+    </div>
+    <div class="form-group">
+      <input type="number" id="edad" name="edad" class="form-control" [(ngModel)]="nuevoCliente.edad" placeholder="Edad" required>
+    </div>
+    <div class="form-group">
+      <input type="text" id="contacto" name="contacto" class="form-control" [(ngModel)]="nuevoCliente.contacto" placeholder="Contacto" required>
+    </div>
+    <div class="form-group">
+      <input type="text" id="dni" name="dni" class="form-control" [(ngModel)]="nuevoCliente.dni" placeholder="DNI" required>
+    </div>
+    <div class="form-group">
+      <input type="number" id="deuda" name="deuda" class="form-control" [(ngModel)]="nuevoCliente.deuda" placeholder="Deuda (importe)" required>
+    </div>
+    <div class="form-group text-center">
+      <button type="submit" class="btn btn-success">Cargar Cliente</button>
+    </div>
+  </form>
+  <div *ngIf="mostrarMensajeExito" class="alert alert-success divAlerta">
+    Cliente Cargado con éxito.
+  </div>
+  <div *ngIf="mostrarMensajeEliminacion" class="alert alert-danger divAlerta">
+    {{ mostrarMensajeEliminacion }}
+  </div>
+  <br>
+  <h2>Tabla de Clientes</h2>
+  <p>Total de registros: {{ totalRegistros }}</p>
+  <p>Total de deudas: {{ totalDeudas | currency }}</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Edad</th>
+        <th>Contacto</th>
+        <th>DNI</th>
+        <th>Deuda (importe)</th>
+        <th>Fecha</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of clientes; let i = index">
+        <td>{{ cliente.id }}</td>
+        <td>{{ cliente.nombre }}</td>
+        <td>{{ cliente.apellido }}</td>
+        <td>{{ cliente.edad }}</td>
+        <td>{{ cliente.contacto }}</td>
+        <td>{{ cliente.dni }}</td>
+        <td>{{ cliente.deuda }}</td>
+        <td>{{ cliente.fecha }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="eliminarCliente(i)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

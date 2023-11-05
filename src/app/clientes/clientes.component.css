@@ -1,0 +1,19 @@
+.table-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+table.table {
+  width: 100%;
+  border: 1px solid #dee2e6;
+  border-collapse: collapse;
+}
+
+table.table th, table.table td {
+  padding: 8px 12px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #dee2e6;
+}
+

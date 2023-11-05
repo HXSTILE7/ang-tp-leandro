@@ -1,0 +1,13 @@
+input{
+    margin: 5px;
+}
+
+h2, p, button{
+    margin: 5px;
+    text-align: center;
+}
+
+.divAlerta{
+    margin: 5px;
+    text-align: center;  
+}
