@@ -1,11 +1,25 @@
-h1 {
-    padding: 10px;
+body * {
+    margin: 2px;
 }
 
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1000;
-  }
-  
+}
+
+.navbar-toggler {
+    display: none;
+}
+
+.custom-link {
+    color: gray;
+}
+
+.custom-link:hover {
+    color: lightgray;
+}
+
+a{
+    display: block;
+}
